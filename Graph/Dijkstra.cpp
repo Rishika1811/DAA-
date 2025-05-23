@@ -20,7 +20,9 @@ void dijkstra(vector<vector<pair<int, int>>> G, int v,int source) {
         if (inMST[u]) continue;
         inMST[u] = true;
         
-        for (auto [vertex,weight] : G[u]) {
+        for (auto edge : G[u]) {				    //edge => pair<int,int> {vertex,weight} => edges connected to u
+			int vertex = edge.first;
+			int weight = edge.second; 
             if ( weight+key[u] < key[vertex]) {
                 key[vertex] = weight+key[u];
                 parent[vertex] = u;

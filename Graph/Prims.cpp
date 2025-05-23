@@ -18,7 +18,9 @@ void prims(vector<vector<pair<int, int>>> G, int v) {
         if (inMST[u]) continue;
         inMST[u] = true;
 
-        for (auto [vertex, weight] : G[u]) {
+        for (auto edge : G[u]) {				    //edge => pair<int,int> {vertex,weight} => edges connected to u
+			int vertex = edge.first;
+			int weight = edge.second; 
             if (!inMST[vertex] && weight < key[vertex]) {
                 key[vertex] = weight;
                 parent[vertex] = u;
@@ -47,7 +49,7 @@ int main() {
     {{0,2}, {1,3}, {4,4}},    // 2
     {{1,3}, {4,2}},           // 3
     {{2,4}, {3,2},{1,1}}            // 4
-};
+    };
     int v = 5;
     prims(G, v);
 }
