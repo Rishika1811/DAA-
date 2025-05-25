@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//here pq har{weight,vertex}, while adj list have {vertex,weight} 
+//here pq has{weight,vertex}, while adj list have {vertex,weight} 
 void dijkstra(vector<vector<pair<int, int>>> G, int v,int source) {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
     vector<int> key(v, INT_MAX);
