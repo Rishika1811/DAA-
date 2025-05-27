@@ -2,7 +2,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
 int find(int u,vector<int>&parent){
     if(u==parent[u]) return u;
     parent[u]= find(parent[u],parent);

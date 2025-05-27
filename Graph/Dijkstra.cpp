@@ -26,7 +26,7 @@ void dijkstra(vector<vector<pair<int, int>>> G, int v,int source) {
             if ( weight+key[u] < key[vertex]) {
                 key[vertex] = weight+key[u];
                 parent[vertex] = u;
-                pq.push({weight, vertex});
+                pq.push({key[vertex], vertex});
             }
         }
     }
